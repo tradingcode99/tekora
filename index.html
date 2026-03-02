@@ -1,1 +1,440 @@
-Under construction
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tekora — Software Development & Data Solutions</title>
+  <style>
+    /* ── Reset & Base ── */
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg: #f5f0eb;
+      --text: #1a1a1a;
+      --muted: #6b6560;
+      --accent: #c45d3e;
+      --card-bg: #ffffff;
+      --border: #d9d4cf;
+      --input-bg: #faf8f6;
+      --font-body: 'DM Sans', sans-serif;
+      --font-heading: 'Playfair Display', serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font-body);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ── Typography ── */
+    @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap');
+
+    h1 {
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+    }
+
+    h2 {
+      font-family: var(--font-heading);
+      font-weight: 600;
+      font-size: clamp(1.4rem, 3vw, 1.8rem);
+      margin-bottom: 1rem;
+    }
+
+    h3 {
+      font-family: var(--font-heading);
+      font-weight: 600;
+      font-size: 1.15rem;
+      margin-bottom: 0.5rem;
+    }
+
+    /* ── Layout ── */
+    .container {
+      width: 100%;
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* ── Header / Hero ── */
+    .hero {
+      padding: 5rem 0 3rem;
+      text-align: center;
+    }
+
+    .hero p {
+      margin-top: 1rem;
+      color: var(--muted);
+      font-size: 1.05rem;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .divider {
+      width: 48px;
+      height: 3px;
+      background: var(--accent);
+      margin: 2rem auto;
+      border-radius: 2px;
+    }
+
+    /* ── Sections ── */
+    .section {
+      padding: 2rem 0 3rem;
+    }
+
+    .section p {
+      color: var(--muted);
+      font-size: 1rem;
+      margin-bottom: 0.85rem;
+    }
+
+    .section ul {
+      list-style: disc;
+      padding-left: 1.25rem;
+      color: var(--muted);
+      font-size: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .section ul li {
+      margin-bottom: 0.6rem;
+    }
+
+    .section ol {
+      padding-left: 1.25rem;
+      color: var(--muted);
+      font-size: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .section ol li {
+      margin-bottom: 0.75rem;
+    }
+
+    .section-divider {
+      width: 100%;
+      height: 1px;
+      background: var(--border);
+      margin: 1rem 0;
+    }
+
+    .tech-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin: 1rem 0;
+    }
+
+    .tech-tags span {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 0.3rem 0.7rem;
+      font-size: 0.85rem;
+      color: var(--text);
+    }
+
+    /* ── Pricing highlight ── */
+    .pricing-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.5rem 2rem;
+      margin: 1rem 0;
+    }
+
+    .pricing-card .rate {
+      font-family: var(--font-heading);
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--accent);
+      margin-bottom: 0.5rem;
+    }
+
+    /* ── Contact ── */
+    .contact {
+      padding: 2rem 0 4rem;
+    }
+
+    .form-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 2rem;
+    }
+
+    .form-group {
+      margin-bottom: 1.25rem;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 500;
+      margin-bottom: 0.35rem;
+      color: var(--text);
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 0.65rem 0.85rem;
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      background: var(--input-bg);
+      color: var(--text);
+      transition: border-color 0.2s;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--accent);
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 110px;
+    }
+
+    .captcha-box {
+      margin-bottom: 1.25rem;
+    }
+
+    .btn-submit {
+      display: inline-block;
+      padding: 0.7rem 2rem;
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: #fff;
+      background: var(--accent);
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: opacity 0.2s;
+    }
+
+    .btn-submit:hover { opacity: 0.85; }
+
+    .form-status {
+      margin-top: 1rem;
+      font-size: 0.9rem;
+      display: none;
+    }
+
+    .form-status.success { color: #2e7d32; display: block; }
+    .form-status.error   { color: #c62828; display: block; }
+
+    /* ── Footer ── */
+    footer {
+      margin-top: auto;
+      text-align: center;
+      padding: 2rem 0;
+      font-size: 0.8rem;
+      color: var(--muted);
+      border-top: 1px solid var(--border);
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 480px) {
+      .hero { padding: 3rem 0 2rem; }
+      .form-card { padding: 1.25rem; }
+      .pricing-card { padding: 1.25rem; }
+    }
+  </style>
+
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+</head>
+
+<body>
+
+  <!-- ═══ HERO ═══ -->
+  <section class="hero">
+    <div class="container">
+      <h1>Tekora</h1>
+      <p>Software Development &amp; Data Solutions</p>
+      <div class="divider"></div>
+    </div>
+  </section>
+
+  <!-- ═══ ABOUT ═══ -->
+  <section class="section">
+    <div class="container">
+      <h2>About Us</h2>
+      <p>Tekora is a software development company specializing in high-load systems, business process automation, and intelligent data analysis. We design and deliver custom software solutions that help our clients efficiently handle large volumes of information, make informed decisions, and optimize their operations.</p>
+      <p>Our team brings together experienced engineers and analysts with deep expertise in software development, machine learning, and data processing. We value long-term partnerships, a flexible approach, and consistently high-quality results.</p>
+      <div class="section-divider"></div>
+    </div>
+  </section>
+
+  <!-- ═══ SERVICES ═══ -->
+  <section class="section">
+    <div class="container">
+      <h2>Our Services</h2>
+      <p>We develop custom software tailored to each client's specific needs. Our core areas of expertise include:</p>
+      <ul>
+        <li><strong>High-Load System Design &amp; Development</strong> — building fault-tolerant applications capable of processing large data volumes in real time.</li>
+        <li><strong>Process Automation</strong> — developing software modules that eliminate manual work and improve the speed and accuracy of operations.</li>
+        <li><strong>Data Analytics &amp; Processing</strong> — building analytical pipelines, visualization, pattern detection, and reporting.</li>
+        <li><strong>Predictive Modeling</strong> — time series forecasting, classification, clustering, and other machine learning tasks.</li>
+        <li><strong>Consulting &amp; Auditing</strong> — evaluating existing infrastructure, providing optimization recommendations, and selecting the right technology stack.</li>
+      </ul>
+      <p>We manage every project from initial requirements analysis through deployment and ongoing support. Client focus and attention to detail are our core principles.</p>
+      <div class="section-divider"></div>
+    </div>
+  </section>
+
+  <!-- ═══ TECHNOLOGY ═══ -->
+  <section class="section">
+    <div class="container">
+      <h2>Technology &amp; Tools</h2>
+      <p>We use a modern, proven technology stack, selecting tools to match each client's specific requirements.</p>
+
+      <h3>Programming Languages</h3>
+      <div class="tech-tags">
+        <span>Python</span>
+        <span>Rust</span>
+      </div>
+      <p>Python is our primary language for data analysis, machine learning, and rapid prototyping. Rust is used for developing high-performance, memory-safe system components that require minimal latency and maximum reliability.</p>
+
+      <h3>Machine Learning &amp; Data Analysis</h3>
+      <p>We apply a broad range of machine learning methods depending on the nature of the task:</p>
+      <ul>
+        <li><strong>Gradient Boosting:</strong> XGBoost, CatBoost, LightGBM — for classification and regression on tabular data.</li>
+        <li><strong>Ensemble Methods:</strong> Random Forest, model stacking — for improved prediction stability and accuracy.</li>
+        <li><strong>Neural Networks:</strong> fully connected architectures, 1D CNNs, recurrent networks (LSTM, GRU) — for working with sequences and time series.</li>
+        <li><strong>Transformer-Based Models</strong> — for tasks requiring complex dependency modeling in data.</li>
+        <li><strong>Unsupervised Learning:</strong> clustering, dimensionality reduction (PCA, t-SNE, UMAP) — for uncovering hidden structures in data.</li>
+        <li><strong>Time Series Forecasting:</strong> building predictive models that account for seasonality, trends, and anomalies.</li>
+      </ul>
+      <p>The selection of specific methods and models is based on a preliminary analysis of the client's data and the nature of the task at hand.</p>
+      <div class="section-divider"></div>
+    </div>
+  </section>
+
+  <!-- ═══ PROCESS ═══ -->
+  <section class="section">
+    <div class="container">
+      <h2>How We Work</h2>
+      <p>Our process is designed to minimize your time investment and ensure full transparency at every stage.</p>
+      <ol>
+        <li><strong>Initial Inquiry.</strong> You reach out to us. We send you a brief questionnaire to understand the nature of your task and your expectations.</li>
+        <li><strong>Analysis &amp; Proposal.</strong> Based on the information provided, we conduct a preliminary analysis, estimate the scope of work, and prepare a proposal with timelines and costs.</li>
+        <li><strong>Agreement &amp; Kick-Off.</strong> Once terms are agreed upon, we begin work. You receive regular progress updates throughout the project.</li>
+        <li><strong>Development &amp; Testing.</strong> We follow an iterative development process with intermediate demos. Every stage includes thorough testing and quality control.</li>
+        <li><strong>Delivery &amp; Support.</strong> Upon completion, we deliver the finished solution and provide technical support as needed.</li>
+      </ol>
+      <div class="section-divider"></div>
+    </div>
+  </section>
+
+  <!-- ═══ PRICING ═══ -->
+  <section class="section">
+    <div class="container">
+      <h2>Pricing</h2>
+      <p>Our pricing is based on actual time spent and task complexity. Your project will be handled by qualified engineers with extensive experience in building high-load systems and working with data.</p>
+      <div class="pricing-card">
+        <div class="rate">From &euro;40 / hour</div>
+        <p style="margin-bottom:0;">Hourly billing based on actual time spent. Rates depend on the nature and complexity of the task. We provide a preliminary budget and timeline estimate before work begins.</p>
+      </div>
+      <p>We are open to discussing terms and ready to offer a flexible engagement model tailored to your project.</p>
+      <div class="section-divider"></div>
+    </div>
+  </section>
+
+  <!-- ═══ CONTACT ═══ -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <h2>Contact Us</h2>
+      <p style="color: var(--muted); margin-bottom: 1rem;">We would be glad to discuss your project and suggest the best solution.</p>
+      <div class="form-card">
+        <form id="contactForm">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required autocomplete="name">
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required autocomplete="email">
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" required></textarea>
+          </div>
+
+          <div class="captcha-box">
+            <div class="cf-turnstile" data-sitekey="YOUR_SITE_KEY" data-theme="light"></div>
+          </div>
+
+          <button type="submit" class="btn-submit">Send</button>
+          <div id="formStatus" class="form-status"></div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ FOOTER ═══ -->
+  <footer>
+    <div class="container">&copy; 2025 Tekora. All rights reserved.</div>
+  </footer>
+
+  <script>
+    const form = document.getElementById('contactForm');
+    const status = document.getElementById('formStatus');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      const token = document.querySelector('[name="cf-turnstile-response"]')?.value;
+      if (!token) {
+        status.textContent = 'Please complete the CAPTCHA.';
+        status.className = 'form-status error';
+        return;
+      }
+
+      const data = {
+        name: form.name.value,
+        email: form.email.value,
+        message: form.message.value,
+        token: token
+      };
+
+      try {
+        const res = await fetch('/api/contact', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(data)
+        });
+
+        if (res.ok) {
+          status.textContent = 'Message sent — thank you!';
+          status.className = 'form-status success';
+          form.reset();
+          turnstile.reset();
+        } else {
+          throw new Error('Server error');
+        }
+      } catch (err) {
+        status.textContent = 'Something went wrong. Please try again later.';
+        status.className = 'form-status error';
+      }
+    });
+  </script>
+
+</body>
+</html>
+
