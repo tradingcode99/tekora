@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Terms &amp; Conditions — Tekora</title>
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg: #f5f0eb;
+      --text: #1a1a1a;
+      --muted: #6b6560;
+      --accent: #c45d3e;
+      --card-bg: #ffffff;
+      --border: #d9d4cf;
+      --input-bg: #faf8f6;
+      --font-body: 'DM Sans', sans-serif;
+      --font-heading: 'Playfair Display', serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font-body);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap');
+
+    h1 {
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+    }
+
+    h2 {
+      font-family: var(--font-heading);
+      font-weight: 600;
+      font-size: clamp(1.1rem, 2.5vw, 1.35rem);
+      margin-bottom: 0.75rem;
+      margin-top: 0.25rem;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    .hero {
+      padding: 5rem 0 3rem;
+      text-align: center;
+    }
+
+    .hero p {
+      margin-top: 1rem;
+      color: var(--muted);
+      font-size: 1.05rem;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .divider {
+      width: 48px;
+      height: 3px;
+      background: var(--accent);
+      margin: 2rem auto;
+      border-radius: 2px;
+    }
+
+    .section {
+      padding: 0.5rem 0 2rem;
+    }
+
+    .terms-block {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.75rem 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .terms-block p {
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .terms-block p:last-child {
+      margin-bottom: 0;
+    }
+
+    .terms-block ul {
+      list-style: disc;
+      padding-left: 1.25rem;
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .terms-block ul li {
+      margin-bottom: 0.5rem;
+    }
+
+    .section-divider {
+      width: 100%;
+      height: 1px;
+      background: var(--border);
+      margin: 1rem 0;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-bottom: 1.5rem;
+      font-size: 0.9rem;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .back-link:hover { color: var(--accent); }
+
+    .updated {
+      font-size: 0.8rem;
+      color: var(--muted);
+      text-align: center;
+      margin-top: -1rem;
+      margin-bottom: 0.5rem;
+    }
+
+    footer {
+      margin-top: auto;
+      text-align: center;
+      padding: 2rem 0;
+      font-size: 0.8rem;
+      color: var(--muted);
+      border-top: 1px solid var(--border);
+    }
+
+    @media (max-width: 480px) {
+      .hero { padding: 3rem 0 2rem; }
+      .terms-block { padding: 1.25rem; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ═══ HERO ═══ -->
+  <section class="hero">
+    <div class="container">
+      <h1>Tekora</h1>
+      <p>Terms &amp; Conditions</p>
+      <div class="divider"></div>
+    </div>
+  </section>
+
+  <!-- ═══ TERMS CONTENT ═══ -->
+  <section class="section">
+    <div class="container">
+
+      <a href="/" class="back-link">← Back to main page</a>
+      <p class="updated">Last Updated: [Date]</p>
+
+      <!-- 1 -->
+      <div class="terms-block">
+        <h2>1. Subject of the Offer</h2>
+        <p>This Public Offer (the "Offer") is a legal agreement between <strong>Tekora</strong>, Reg. No: [Number], Address: [Latvia Address] (the "Contractor") and any legal entity or individual (the "Client") that accepts this Offer.</p>
+      </div>
+
+      <!-- 2 -->
+      <div class="terms-block">
+        <h2>2. Acceptance</h2>
+        <p>The Client accepts this Offer by making a payment based on an invoice issued by the Contractor. Payment of the invoice constitutes:</p>
+        <ul>
+          <li>Full and irrevocable acceptance of these Terms &amp; Conditions.</li>
+          <li>Confirmation that the Services described in the invoice have been performed to the Client's satisfaction and are accepted in full.</li>
+        </ul>
+      </div>
+
+      <!-- 3 -->
+      <div class="terms-block">
+        <h2>3. Services and Scope</h2>
+        <p>3.1. The Contractor provides software development services on a <strong>weekly basis</strong>.</p>
+        <p>3.2. The Services include: development and optimization of automated financial data processing modules, trading interface algorithms, system maintenance, and technical support.</p>
+        <p>3.3. Specific task prioritization is managed via electronic communication (email, messengers, or project management tools). The weekly fee is fixed at <strong>[Amount] USD</strong>, unless otherwise agreed in writing.</p>
+      </div>
+
+      <!-- 4 -->
+      <div class="terms-block">
+        <h2>4. Payment Terms</h2>
+        <p>4.1. The Contractor issues invoices weekly upon completion of the service period.</p>
+        <p>4.2. The Client shall pay the invoice within 3–7 business days of receipt.</p>
+        <p>4.3. <strong>VAT Treatment:</strong> VAT is not applicable. The Contractor is not a registered VAT payer in accordance with the Law on Value Added Tax of the Republic of Latvia.</p>
+        <p>4.4. All payments are made via bank transfer or electronic payment systems (e.g., Wise, Revolut).</p>
+      </div>
+
+      <!-- 5 -->
+      <div class="terms-block">
+        <h2>5. Status and Taxation</h2>
+        <p>5.1. The Contractor is an <strong>independent contractor</strong>. This Offer does not create an employment relationship, partnership, or joint venture.</p>
+        <p>5.2. The Contractor has the sole right to control and direct the means, details, and methods of performing the Services and is not subject to a fixed work schedule.</p>
+        <p>5.3. The Contractor is a tax resident of Latvia and is solely responsible for all taxes and social contributions in their jurisdiction.</p>
+        <p>5.4. The Contractor confirms they have no "Permanent Establishment" in the USA. All services are performed outside the United States.</p>
+      </div>
+
+      <!-- 6 -->
+      <div class="terms-block">
+        <h2>6. Intellectual Property and Confidentiality</h2>
+        <p>6.1. Full ownership of the software modules developed during the paid period is transferred to the Client upon full payment of the respective invoice.</p>
+        <p>6.2. If no written objections regarding the quality or scope of Services are received within 5 business days after payment, the Services are deemed fully accepted.</p>
+        <p>6.3. Both parties agree to keep confidential all proprietary and business information disclosed under this Offer.</p>
+      </div>
+
+      <!-- 7 -->
+      <div class="terms-block">
+        <h2>7. Termination</h2>
+        <p>Either party may terminate the cooperation at any time by notifying the other party via email. Any outstanding invoices for work performed must be paid in full.</p>
+      </div>
+
+      <!-- 8 -->
+      <div class="terms-block">
+        <h2>8. Governing Law</h2>
+        <p>This Offer shall be governed by the laws of the Republic of Latvia.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══ FOOTER ═══ -->
+  <footer>
+    <div class="container">&copy; 2025 Tekora. All rights reserved.</div>
+  </footer>
+
+</body>
+</html>
